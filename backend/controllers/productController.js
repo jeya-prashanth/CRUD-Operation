@@ -68,7 +68,11 @@ export const updateProduct = async (req, res) => {
     product.name = name;
     product.description = description;
     product.price = price;
-    product.image = image;
+    if (image !== undefined && image !== null) {
+        product.image = image;
+    } else {
+        console.log('Image field is missing or null from req.body');
+    }
     product.quantity = quantity;
     await product.save();
     res.status(200).json({ message: 'Product updated', product });
