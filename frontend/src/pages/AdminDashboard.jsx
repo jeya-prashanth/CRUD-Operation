@@ -85,9 +85,9 @@ const AdminDashboard = () => {
                   <td className="py-2 px-4 font-medium">{product.name}</td>
                   <td className="py-2 px-4">{product.price.toLocaleString('en-LK', { style: 'currency', currency: 'LKR' })}</td>
                   <td className="py-2 px-4">{product.quantity}</td>
-                  <td className="py-2 px-4 space-x-2">
-                    <Link to={`/admin/product/${product._id}/edit`} className="px-3 py-1 bg-[#00bba7] hover:bg-[#115e59] text-white rounded">Edit</Link>
-                    <button onClick={() => handleDelete(product._id)} className="px-3 py-1 bg-red-500 hover:bg-red-700 text-white rounded">Delete</button>
+                  <td className="py-3 px-4 space-x-2">
+                    <Link to={`/admin/product/${product._id}/edit`} className="px-[25px] py-2 mb-3 gap-2 bg-[#00bba7] hover:bg-[#115e59] text-white rounded">Edit</Link>
+                    <button onClick={() => handleDelete(product._id)} className="px-4 py-2 gap-2 mt-3 mb-[-6px] bg-red-500 hover:bg-red-700 text-white rounded">Delete</button>
                   </td>
                 </tr>
               ))}

@@ -73,6 +73,7 @@ export const updateProduct = async (req, res) => {
     } else {
         console.log('Image field is missing or null from req.body');
     }
+   
     product.quantity = quantity;
     await product.save();
     res.status(200).json({ message: 'Product updated', product });

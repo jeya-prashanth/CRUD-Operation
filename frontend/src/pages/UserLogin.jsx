@@ -19,7 +19,7 @@ const UserLogin = () => {
         email,
         password
       });
-      localStorage.setItem('token', res.data.token);
+      // localStorage.setItem('token', res.data.token);
       if (res.data.user && res.data.user.firstname) {
         localStorage.setItem('username', res.data.user.firstname);
       }
