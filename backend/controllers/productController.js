@@ -67,14 +67,14 @@ export const updateProduct = async (req, res) => {
     if (!product) return res.status(404).json({ message: 'Product not found' });
     product.name = name;
     product.description = description;
-    product.price = price;
+    product.price = Number(price);
+    product.quantity = Number(quantity);
     if (image !== undefined && image !== null) {
         product.image = image;
     } else {
         console.log('Image field is missing or null from req.body');
     }
-   
-    product.quantity = quantity;
+    
     await product.save();
     res.status(200).json({ message: 'Product updated', product });
   } catch (err) {
